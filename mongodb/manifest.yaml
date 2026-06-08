@@ -23,7 +23,17 @@ template:
   spec: 
     containers:
     - name: mongodb
-      image: 
+      image: akhila2829/mongodb:v1
+      readinessprobe:
+        tcpsocket:
+          port: 27017
+        initialDelaySeconds: 10
+        periodSeconds: 10
+      livenessprobe:
+        tcpsocket: 
+          port: 27017
+        initialDelayseconds: 5
+        periodSeconds: 5        
 
 
 
